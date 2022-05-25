@@ -36,12 +36,12 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-user mr-2"></i> Admin
+            <i class="far fa-user mr-2"></i> {{Auth::user()->name}}
           </a>
           <div class="dropdown-menu dropdown-menu-right">
             {{-- <span class="dropdown-item dropdown-header">15 Notifications</span> --}}
             {{-- <div class="dropdown-divider"></div> --}}
-            <a href="#" class="dropdown-item dropdown-footer">Logout</a>
+            <a href="{{route('admin.logout')}}" class="dropdown-item dropdown-footer">Logout</a>
           </div>
         </li>
         <li class="nav-item">

@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
-class CustomerSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,13 +17,10 @@ class CustomerSeeder extends Seeder
     {
         $faker = \Faker\Factory::create('id_ID');
         for ($i = 0; $i < 10; $i++) {
-            DB::table('customers')->insert([
+            DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'company' => $faker->company,
-                'phone' => $faker->phoneNumber,
-                'address' => $faker->address,
-                'image' => $faker->imageUrl(640, 480, 'people'),
+                'password' => Hash::make('password'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

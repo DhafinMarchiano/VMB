@@ -26,22 +26,58 @@
 
         <!-- Default box -->
         <div class="card">
-            <form>
+            <form action="{{route('admin.pengiriman.create')}}" method="POST">
+                @csrf
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Tanggal</label>
-                        <input type="date" class="form-control" id="exampleInputEmail1"
-                            placeholder="Tanggal Berangkat">
+                        <label for="customer_id">Pesanan Milik</label>
+                        <select class="form-control" id="customer_id" name="customer_id">
+                            <option selected disabled>Pilih Pemesan</option>
+                            @foreach ($customers as $customer)
+                                <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Berangkat</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1"
-                            placeholder="Pilih Tempat">
+                        <label for="order_date">Tanggal</label>
+                        <input type="date" class="form-control" id="order_date" name="order_date">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Tujuan</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1"
-                            placeholder="Pilih Tempat">
+                        <label for="start">Berangkat</label>
+                        <select class="form-control" id="start" name="start">
+                            <option selected disabled>Pilih Tempat</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Bali">Bali</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="end">Tujuan</label>
+                        <select class="form-control" id="end" name="end">
+                            <option selected disabled>Pilih Tempat</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Bali">Bali</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="total_weight">Total Berat (Kg)</label>
+                        <input type="number" step="0.01" class="form-control" id="total_weight" name="total_weight" placeholder="Ex: 12.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="total_price">Tarif (Rp.)</label>
+                        <input type="number" class="form-control" id="total_price" name="total_price" placeholder="Ex: 2000000">
                     </div>
                 </div>
 

@@ -34,52 +34,27 @@
             <tr>
               <th>ID</th>
               <th>Tgl</th>
+              <th>Pemesan</th>
               <th>Berangkat</th>
               <th>Tujuan</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($orders as $order)
             <tr>
-              <td>1</td>
-              <td>24 Agustus 2022</td>
-              <td>Jakarta</td>
-              <td>Surabaya</td>
+              <td>{{ $order->id }}</td>
+              <td>{{ $order->order_date }}</td>
+              <td>{{ $order->customer->name }}</td>
+              <td>{{ $order->start }}</td>
+              <td>{{ $order->end }}</td>
               <td>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
+                <a href="{{ route('admin.pengiriman.edit', $order->id) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ route('admin.pengiriman.delete', $order->id) }}" class="btn btn-danger">Hapus</a>
+                </form>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>31 Agustus 2022</td>
-              <td>Jakarta</td>
-              <td>Bali</td>
-              <td>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>10 September 2022</td>
-              <td>Surabaya</td>
-              <td>Banten</td>
-              <td>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>13 September 2022</td>
-              <td>Semarang</td>
-              <td>Surabaya</td>
-              <td>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
-              </td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

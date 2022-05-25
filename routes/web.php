@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,11 +35,12 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('{id}/delete', [CustomerController::class, 'delete'])->name('admin.pesanan.delete');
     });
 
-    Route::get('/pengiriman/create', function () {
-        return view('admin.pengiriman.create');
-    })->name('admin.pengiriman.create');
-
-    Route::get('/pengiriman', function () {
-        return view('admin.pengiriman.index');
-    })->name('admin.pengiriman');
+    Route::group(['prefix' => 'pengiriman'], function() {
+        Route::get('/', [OrderController::class, 'index'])->name('admin.pengiriman');
+        Route::get('create', [OrderController::class, 'create'])->name('admin.pengiriman.create');
+        Route::post('create', [OrderController::class, 'store']);
+        Route::get('{id}/edit', [OrderController::class, 'edit'])->name('admin.pengiriman.edit');
+        Route::post('{id}/edit', [OrderController::class, 'update']);
+        Route::get('{id}/delete', [OrderController::class, 'delete'])->name('admin.pengiriman.delete');
+    });
 });

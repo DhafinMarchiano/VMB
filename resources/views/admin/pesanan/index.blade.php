@@ -14,6 +14,9 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active mr-2">Pesanan</li>
+            <li>
+              <a href="{{ route('admin.pesanan.create') }}" class="btn btn-primary">Buat Pesanan Baru</a>
+            </li>
           </ol>
         </div>
       </div>
@@ -31,51 +34,23 @@
             <tr>
               <th>ID</th>
               <th>Nama Pemesan</th>
-              <th>ID Kargo</th>
+              <th>Perusahaan</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($customers as $customer)
             <tr>
-              <td>1</td>
-              <td>Budi</td>
-              <td>3</td>
+              <td>{{ $customer->id }}</td>
+              <td>{{ $customer->name }}</td>
+              <td>{{ $customer->company }}</td>
               <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
+                <a href="{{ route('admin.pesanan.detail', $customer->id) }}" class="btn btn-info">Detail</a>
+                <a href="{{ route('admin.pesanan.edit', $customer->id) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ route('admin.pesanan.delete', $customer->id) }}" class="btn btn-danger">Hapus</a>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Tantri</td>
-              <td>2</td>
-              <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Samid</td>
-              <td>8</td>
-              <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Kimael</td>
-              <td>4</td>
-              <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-danger">Hapus</a>
-              </td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

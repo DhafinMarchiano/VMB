@@ -12,15 +12,15 @@
 
     <div class="container">
     <div class="row align-items-center">
-        
+
         <div class="col-11 col-xl-2">
         <h1 class="mb-0"><a href="{{ route('landing') }}" class="text-white h2 mb-0"><img height="70" src="{{ asset('assets/images/LOGO VMB-1.png') }}" alt=""></a></h1>
         </div>
         <div class="col-12 col-md-10 d-none d-xl-block">
         <nav class="site-navigation position-relative text-right" role="navigation">
             <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-            <li class="{{ Request::path() ==  '/' ? 'bg-primary' : ''  }}"><a href="{{ route('landing') }}#home">Home</a></li>
-            <li class="{{ Request::path() ==  'about' ? 'bg-primary' : ''  }}"><a href="{{ route('about') }}">About Us</a></li>
+            <li><a href="{{ route('landing') }}#home">Home</a></li>
+            <li><a href="{{ route('about') }}">About Us</a></li>
             <li><a href="{{ route('landing') }}#services">Services</a></li>
             <li><a href="{{ route('landing') }}#achievements">Achievements</a></li>
             <li><a href="{{ route('landing') }}#clients">Clients</a></li>
@@ -36,5 +36,5 @@
 
     </div>
     </div>
-    
+
 </header>

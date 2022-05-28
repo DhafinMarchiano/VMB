@@ -68,7 +68,7 @@
 
             <li class="nav-item">
               <a href="{{ route('admin.pengiriman') }}" class="nav-link {{ (request()->is('admin/pengiriman*')) ? 'active' : ''  }}">
-                <i class="nav-icon far fa-home"></i>
+                <i class="nav-icon far fa-calendar"></i>
                 <p>
                   Jadwal Pengiriman
                 </p>
@@ -79,6 +79,14 @@
                 <i class="nav-icon fas fa-angles-right"></i>
                 <p>
                   List Pesanan
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.account') }}" class="nav-link {{ (request()->is('admin/account*')) ? 'active' : ''  }}">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  List Akun
                 </p>
               </a>
             </li>
@@ -93,7 +101,7 @@
 
     @yield('content')
 
-    
+
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->

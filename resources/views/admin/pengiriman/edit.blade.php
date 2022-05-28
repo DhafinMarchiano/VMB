@@ -26,7 +26,7 @@
 
         <!-- Default box -->
         <div class="card">
-            <form action="{{route('admin.pengiriman.edit', $order->id)}}" method="POST">
+            <form action="{{route('admin.pengiriman.edit', $order->id)}}" style="max-width: 500px" method="POST">
                 @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">

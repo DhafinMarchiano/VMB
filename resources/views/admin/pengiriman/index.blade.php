@@ -50,7 +50,7 @@
               <td>{{ $order->end }}</td>
               <td>
                 <a href="{{ route('admin.pengiriman.edit', $order->id) }}" class="btn btn-warning">Edit</a>
-                <a href="{{ route('admin.pengiriman.delete', $order->id) }}" class="btn btn-danger">Hapus</a>
+                <a href="{{ route('admin.pengiriman.delete', $order->id) }}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                 </form>
               </td>
             </tr>
@@ -66,3 +66,4 @@
 </div>
 <!-- /.content-wrapper -->
 @endsection
+

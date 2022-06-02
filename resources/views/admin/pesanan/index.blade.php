@@ -47,7 +47,7 @@
               <td>
                 <a href="{{ route('admin.pesanan.detail', $customer->id) }}" class="btn btn-info">Detail</a>
                 <a href="{{ route('admin.pesanan.edit', $customer->id) }}" class="btn btn-warning">Edit</a>
-                <a href="{{ route('admin.pesanan.delete', $customer->id) }}" class="btn btn-danger">Hapus</a>
+                <a href="{{ route('admin.pesanan.delete', $customer->id) }}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
               </td>
             </tr>
             @endforeach
@@ -60,5 +60,5 @@
   </section>
   <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->    
+<!-- /.content-wrapper -->
 @endsection

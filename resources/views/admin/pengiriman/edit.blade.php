@@ -79,6 +79,15 @@
                         <label for="total_price">Tarif (Rp.)</label>
                         <input type="number" class="form-control" id="total_price" name="total_price" placeholder="Ex: 2000000" value="{{ $order->total_price }}">
                     </div>
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select class="form-control" id="status" name="status">
+                            <option selected disabled>Pilih Status</option>
+                            <option value="pending" @if ($order->status == 'pending') selected @endif>Pending</option>
+                            <option value="onProgress" @if ($order->status == 'onProgress') selected @endif>On Progress</option>
+                            <option value="done" @if ($order->status == 'done') selected @endif>Done</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="card-footer">

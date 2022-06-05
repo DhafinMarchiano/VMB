@@ -45,17 +45,27 @@
                         <th>Tujuan</th>
                         <th>Berat</th>
                         <th>Tarif</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                 @forelse ($customer->orders as $order)
                     <tr>
-                        <td>Tgl: {{$order->order_date}}</td>
-                        <td>Berangkat: {{$order->start}}</td>
-                        <td>Tujuan: {{$order->end}}</td>
-                        <td>Berat: {{$order->total_weight}} Kg</td>
-                        <td>Tarif: Rp {{number_format($order->total_price,0,',','.')}}</td>
+                        <td>{{$order->order_date}}</td>
+                        <td>{{$order->start}}</td>
+                        <td>{{$order->end}}</td>
+                        <td>{{$order->total_weight}} Kg</td>
+                        <td>Rp {{number_format($order->total_price,0,',','.')}}</td>
+                        <td>
+                            @if ($order->status == 'pending')
+                                <span class="badge badge-warning">Pending</span>
+                            @elseif ($order->status == 'onProgress')
+                                <span class="badge badge-info">On Progress</span>
+                            @elseif ($order->status == 'done')
+                                <span class="badge badge-success">Done</span>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{ route('admin.pengiriman.edit', $order->id) }}" class="btn btn-warning">Edit</a>
                             <a href="{{ route('admin.pengiriman.delete', $order->id) }}" class="btn btn-danger">Hapus</a>

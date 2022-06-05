@@ -16,6 +16,7 @@ class Order extends Model
         'end',
         'total_weight',
         'total_price',
+        'status',
     ];
 
     public function customer() {

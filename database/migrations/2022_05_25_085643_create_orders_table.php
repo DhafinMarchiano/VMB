@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('end');
             $table->double('total_weight');
             $table->integer('total_price');
+            $table->string('status')->default('pending');
             $table->foreign('customer_id')
                 ->references('id')
                 ->on('customers')

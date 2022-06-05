@@ -15,7 +15,9 @@ class OrderController extends Controller
 
     public function create() {
         $customers = Customer::all();
-        return view('admin.pengiriman.create', compact('customers'));
+        $cities = json_decode(file_get_contents(public_path('json/city.json')));
+        // dd($cities[0]->provinsi);
+        return view('admin.pengiriman.create', compact('customers', 'cities'));
     }
 
     public function store(Request $request) {
@@ -58,6 +60,7 @@ class OrderController extends Controller
             'end' => 'required|string|max:255|different:start',
             'total_weight' => 'required|numeric|min:0',
             'total_price' => 'required|numeric|min:0',
+            'status' => 'required|string|max:255',
         ]);
 
         // Update order
@@ -68,6 +71,7 @@ class OrderController extends Controller
             'end' => $request->input('end'),
             'total_weight' => $request->input('total_weight'),
             'total_price' => $request->input('total_price'),
+            'status' => $request->input('status'),
         ]);
 
         // Redirect to order detail

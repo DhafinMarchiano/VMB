@@ -25,6 +25,21 @@ Route::get('/about', function () {
     return view('client.about');
 })->name('about');
 
+Route::group(['prefix' => 'customer'], function() {
+
+    Route::get('login', [CustomerController::class, 'formLogin'])->name('customer.login');
+    Route::post('login', [CustomerController::class, 'login'])->name('customer.login.submit');
+    Route::get('logout', [CustomerController::class, 'logout'])->name('customer.logout');
+
+    Route::group(['middleware' => 'auth:customer'], function() {
+        Route::get('profil', [CustomerController::class, 'profile'])->name('customer.profile');
+        Route::post('profil', [CustomerController::class, 'updateProfile'])->name('customer.profile.update');
+        Route::post('profil/password', [CustomerController::class, 'updatePassword'])->name('customer.password.update');
+
+        Route::get('pesanan', [OrderController::class, 'customer'])->name('customer.orders');
+    });
+});
+
 Route::group(['prefix' => 'admin'], function() {
 
     Route::get('login', [AuthController::class, 'formLogin'])->name('admin.login');

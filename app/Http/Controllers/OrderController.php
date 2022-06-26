@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -82,5 +83,12 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->delete();
         return redirect()->route('admin.pengiriman')->with('success', 'Pesanan berhasil dihapus');
+    }
+
+    public function customer() {
+        $orders = Order::where('customer_id', '=', Auth::guard('customer')->user()->id)
+            ->Orderby('order_date', 'desc')
+            ->get();
+        return view('client.order', compact('orders'));
     }
 }

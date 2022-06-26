@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function formLogin() {
-        if (auth()->check()) {
+        if (auth('web')->check()) {
             return redirect()->route('admin.pesanan');
         } else {
             return view('admin.auth.login');
@@ -20,7 +20,7 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if (auth()->attempt($request->only(['email', 'password']))) {
+        if (auth('web')->attempt($request->only(['email', 'password']))) {
             return redirect()->route('admin.pesanan');
         } else {
             return redirect()->route('admin.login')->with('error', 'Email atau password salah');
@@ -28,7 +28,7 @@ class AuthController extends Controller
     }
 
     public function logout() {
-        auth()->logout();
+        auth('web')->logout();
         return redirect()->route('admin.login');
     }
 }

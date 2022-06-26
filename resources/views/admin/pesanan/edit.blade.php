@@ -60,7 +60,7 @@
                         <textarea class="form-control" name="address" id="address" cols="30" rows="10" placeholder="address">{{$customer->address}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="">File</label>
+                        <label for="">Foto</label>
                         <input class="form-control" type="file" name="image" id="image">
                     </div>
                     <button class="btn btn-primary" type="submit">save</button>

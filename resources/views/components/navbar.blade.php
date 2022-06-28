@@ -19,12 +19,13 @@
         <div class="col-12 col-md-10 d-none d-xl-block">
         <nav class="site-navigation position-relative text-right" role="navigation">
             <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-            <li><a href="{{ route('landing') }}#home">Home</a></li>
-            <li><a href="{{ route('about') }}">About Us</a></li>
-            <li><a href="{{ route('landing') }}#services">Services</a></li>
-            <li><a href="{{ route('landing') }}#achievements">Achievements</a></li>
-            <li><a href="{{ route('landing') }}#clients">Clients</a></li>
-            <li><a href="{{ route('landing') }}#contacts">Contact</a></li>
+                <li><a href="{{ route('landing') }}#home">Home</a></li>
+                <li><a href="{{ route('about') }}">About Us</a></li>
+                <li><a href="{{ route('landing') }}#services">Services</a></li>
+                <li><a href="{{ route('landing') }}#achievements">Achievements</a></li>
+                <li><a href="{{ route('landing') }}#clients">Clients</a></li>
+                <li><a href="{{ route('landing') }}#contacts">Contact</a></li>
+                <li><a href="{{ route('customer.login') }}">Login</a></li>
             </ul>
         </nav>
         </div>

@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Daftar Order {{Auth::guard('customer')->user()->name}}</title>
-</head>
-<body>
-    <a href="{{route('customer.profile')}}">Profil</a>
-    <a href="{{route('customer.logout')}}">Logout</a>
-    <h1>Daftar Order {{Auth::guard('customer')->user()->name}}</h1>
-    <table class="table table-hover text-nowrap">
+@extends('layouts.client')
+
+@section('content')
+<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <h1>Daftar Order</h1>
+        </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-hover text-nowrap">
         <thead>
           <tr>
             <th>No</th>
@@ -50,5 +56,7 @@
           @endforelse
         </tbody>
       </table>
-</body>
-</html>
+      </div>
+    </div>
+</div>
+@endsection

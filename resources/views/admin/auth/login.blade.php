@@ -19,7 +19,7 @@
 <body class="login-page" style="min-height: 496.642px;">
     <div class="login-box">
         <div class="login-logo">
-            <a href=""><b>VMB</b></a>
+            <a href=""><b>VMB</b> Admin</a>
         </div>
 
         <div class="card">
@@ -61,9 +61,10 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                 </form>
-
+                <p class="login-box-msg mt-3">
+                    <a href="{{ route('customer.login') }}" class="text-center login-box-msg">Login Customer</a>
+                </p>
             </div>
-
         </div>
     </div>
 

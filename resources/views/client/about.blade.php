@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700">
     <link rel="stylesheet" href="{{ asset('assets/fonts/icomoon/style.css') }}">
 
     <link rel="stylesheet" href="{{ asset("assets/css/bootstrap.min.css") }}">
@@ -23,10 +23,10 @@
     <link rel="stylesheet" href="{{ asset("assets/css/aos.css") }}">
 
     <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
-    
+
   </head>
   <body>
-  
+
   <div class="site-wrap">
 
     <x-navbar/>
@@ -41,12 +41,12 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
 
     <div class="site-section">
       <div class="container">
         <div class="row mb-5">
-          
+
           <div class="col-md-5 ml-auto mb-5 order-md-2" data-aos="fade">
             <img src="{{ asset('assets/images/img_1.jpg') }}" alt="Image" class="img-fluid rounded">
           </div>
@@ -54,7 +54,7 @@
             <div class="text-left pb-1 border-primary mb-4">
               <h2 class="text-primary">Our History</h2>
             </div>
-            <p>PT Vifiera Minova Bersaudara was established since the year 2000, By H. Abdul Rachman. Since then it has been providing various services such as Completely Buid Up Handling, Customs Clearance and a Forwarding Agent. Which serves various clients throughout the years 
+            <p>PT Vifiera Minova Bersaudara was established since the year 2000, By H. Abdul Rachman. Since then it has been providing various services such as Completely Buid Up Handling, Customs Clearance and a Forwarding Agent. Which serves various clients throughout the years
               <br>
               </p>
             <p class="mb-5">VMB itself is a trucking company with more than 20 years of experience. Since 2016, Due to its consistency and determination VMB has won various awards from competitions held by Toyota TMMIN and still to this day.</p>
@@ -92,12 +92,12 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
-  
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero_bg_4.jpg');">
+
+    <div class="site-section bg-image overlay" style="background-image: url('assets/images/hero_bg_4.jpg');">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center border-primary">
@@ -152,6 +152,6 @@
   <script src="{{ asset('assets/js/aos.js') }}"></script>
 
   <script src="{{ asset('assets/js/main.js') }}"></script>
-    
+
   </body>
 </html>
